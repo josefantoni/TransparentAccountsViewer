@@ -15,14 +15,16 @@ struct Account: Codable {
     let publicationTo: String
     let actualizationDate: String
     let balance: Double
-    let currency: String // In Postman app server API returning this value, but mobile fetch does not receive "currency" key at all !!!
+    let currency: String
     let name: String
     let iban: String
+    let description: String
+    let statements: [String]
     
     enum CodingKeys: String, CodingKey {
         case accountNumber
         case bankCode
-        case transparencyFrom
+        case transparencyFrom	
         case transparencyTo
         case publicationTo
         case actualizationDate
@@ -30,6 +32,8 @@ struct Account: Codable {
         case currency = "currency"
         case name
         case iban
+        case description
+        case statements
     }
 
     init(from decoder: Decoder) throws {
@@ -44,5 +48,7 @@ struct Account: Codable {
         currency = try values.decodeIfPresent(String.self, forKey: .currency) ?? "CZK" // this seems to be default value in my Postman app
         name = try values.decodeIfPresent(String.self, forKey: .name) ?? ""
         iban = try values.decodeIfPresent(String.self, forKey: .iban) ?? ""
+        description = try values.decodeIfPresent(String.self, forKey: .description) ?? ""
+        statements = try values.decodeIfPresent([String].self, forKey: .statements) ?? []
     }
 }
