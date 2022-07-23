@@ -2,7 +2,7 @@
 //  TransparentAccountsViewerApp.swift
 //  TransparentAccountsViewer
 //
-//  Created by Pepca on 23.07.2022.
+//  Created by Josef Antoni on 23.07.2022.
 //
 
 import SwiftUI
