@@ -8,9 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var viewModel = AccountViewModel()
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            VStack {
+                //TODO: values
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationTitle("")
+            .toolbar {
+                ToolbarItemGroup(placement: .principal) {
+                    ServerStatusView(connectionStatus: viewModel.connectionServerStatus)
+                }
+            }
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

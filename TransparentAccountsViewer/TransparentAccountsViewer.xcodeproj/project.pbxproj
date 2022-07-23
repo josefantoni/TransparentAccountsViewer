@@ -14,6 +14,7 @@
 		B25F9D40288BE1FA0051C126 /* Accounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F9D3F288BE1FA0051C126 /* Accounts.swift */; };
 		B25F9D42288BE2140051C126 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F9D41288BE2140051C126 /* Account.swift */; };
 		B25F9D44288BE44F0051C126 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F9D43288BE44F0051C126 /* AccountViewModel.swift */; };
+		B2A68A55288C36750057C88F /* ServerStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A68A54288C36750057C88F /* ServerStatusView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B25F9D3F288BE1FA0051C126 /* Accounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accounts.swift; sourceTree = "<group>"; };
 		B25F9D41288BE2140051C126 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		B25F9D43288BE44F0051C126 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
+		B2A68A54288C36750057C88F /* ServerStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStatusView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,7 +63,8 @@
 				B25F9D32288BDA0D0051C126 /* ContentView.swift */,
 				B25F9D43288BE44F0051C126 /* AccountViewModel.swift */,
 				B25F9D3E288BE1C00051C126 /* Models */,
-				B25F9D34288BDA0E0051C126 /* Assets.xcassets */,
+				B2A68A53288C36040057C88F /* ViewComponents */,
+				B2A68A56288C36DF0057C88F /* Resources */,
 				B25F9D36288BDA0E0051C126 /* Preview Content */,
 			);
 			path = TransparentAccountsViewer;
@@ -82,6 +85,22 @@
 				B25F9D41288BE2140051C126 /* Account.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B2A68A53288C36040057C88F /* ViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				B2A68A54288C36750057C88F /* ServerStatusView.swift */,
+			);
+			path = ViewComponents;
+			sourceTree = "<group>";
+		};
+		B2A68A56288C36DF0057C88F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B25F9D34288BDA0E0051C126 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +175,7 @@
 			files = (
 				B25F9D40288BE1FA0051C126 /* Accounts.swift in Sources */,
 				B25F9D44288BE44F0051C126 /* AccountViewModel.swift in Sources */,
+				B2A68A55288C36750057C88F /* ServerStatusView.swift in Sources */,
 				B25F9D33288BDA0D0051C126 /* ContentView.swift in Sources */,
 				B25F9D31288BDA0D0051C126 /* TransparentAccountsViewerApp.swift in Sources */,
 				B25F9D42288BE2140051C126 /* Account.swift in Sources */,
