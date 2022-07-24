@@ -19,30 +19,55 @@ struct AccountDetailView: View {
             tableView
         }.onAppear(perform: {
             viewModel.fetchTransparentAccountDetail()
+            viewModel.fetchTransactions()
         })
     }
     
     var tableView: some View {
         List {
-            listRow(topLeft: viewModel.accountDetail.name,
-                    topRight: "\(viewModel.accountDetail.balance)\(viewModel.accountDetail.currency)",
-                    botLeft: "\(viewModel.accountDetail.accountNumber)/\(viewModel.accountDetail.bankCode)")
-            listRow(topLeft: "IBAN:",
-                    topRight: viewModel.accountDetail.iban)
-            listRow(topLeft: "Transparency from:",
-                    topRight: viewModel.accountDetail.transparencyFrom.formatDate)
-            listRow(topLeft: "Transparency to:",
-                    topRight: viewModel.accountDetail.transparencyTo.formatDate)
-            if !viewModel.accountDetail.description.isEmpty {
-                listRow(topLeft: "Description:",
-                        topRight: viewModel.accountDetail.description)
+            Section {
+                listRow(topLeft: viewModel.accountDetail.name,
+                        topRight: "\(viewModel.accountDetail.balance)\(viewModel.accountDetail.currency)",
+                        botLeft: "\(viewModel.accountDetail.accountNumber)/\(viewModel.accountDetail.bankCode)")
+                listRow(topLeft: "IBAN:",
+                        topRight: viewModel.accountDetail.iban)
+                listRow(topLeft: "Transparency from:",
+                        topRight: viewModel.accountDetail.transparencyFrom.formatDate)
+                listRow(topLeft: "Transparency to:",
+                        topRight: viewModel.accountDetail.transparencyTo.formatDate)
+                if !viewModel.accountDetail.description.isEmpty {
+                    listRow(topLeft: "Description:",
+                            topRight: viewModel.accountDetail.description)
+                }
+                if !viewModel.accountDetail.statements.isEmpty {
+                    listRow(topLeft: "Statements:",
+                            topRight: viewModel.accountDetail.statements.joined(separator: "\n"))
+                }
+            } header: {
+                Text("Account info")
             }
-            if !viewModel.accountDetail.statements.isEmpty {
-                listRow(topLeft: "Statements:",
-                        topRight: viewModel.accountDetail.statements.joined(separator: "\n"))
+            Section {
+                transactionView()
+            } header: {
+                if viewModel.accountTransactions.count > 0 { Text("Transactions") }
             }
         }
         .listStyle(InsetGroupedListStyle())
+    }
+    
+    @ViewBuilder
+    func transactionView() -> some View {
+        // TODO: proklik na detail
+        ForEach(viewModel.accountTransactions, id: \.id ) { transaction in
+            if let amount = transaction.amount {
+                listRow(topLeft: transaction.typeDescription,
+                        topRight: transaction.processingDate.formatDate,
+                        botRight: "\(amount.value)\(amount.currency)")
+            } else {
+                // TODO:
+                Text("Something went wrong")
+            }
+        }
     }
     
     @ViewBuilder

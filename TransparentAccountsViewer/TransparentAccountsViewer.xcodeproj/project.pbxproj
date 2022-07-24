@@ -21,6 +21,7 @@
 		B2A68A63288C70160057C88F /* ServerUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A68A62288C70160057C88F /* ServerUrls.swift */; };
 		B2A68A68288CB82C0057C88F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A68A67288CB82C0057C88F /* DateFormatter.swift */; };
 		B2CB83AE288DA7B500D058DB /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB83AD288DA7B500D058DB /* NavigationLazyView.swift */; };
+		B2CB83B0288DB11C00D058DB /* AccountTransactions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB83AF288DB11C00D058DB /* AccountTransactions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B2A68A62288C70160057C88F /* ServerUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUrls.swift; sourceTree = "<group>"; };
 		B2A68A67288CB82C0057C88F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		B2CB83AD288DA7B500D058DB /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationLazyView.swift; path = TransparentAccountsViewer/ViewComponents/NavigationLazyView.swift; sourceTree = SOURCE_ROOT; };
+		B2CB83AF288DB11C00D058DB /* AccountTransactions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTransactions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				B25F9D3F288BE1FA0051C126 /* Accounts.swift */,
 				B25F9D41288BE2140051C126 /* Account.swift */,
+				B2CB83AF288DB11C00D058DB /* AccountTransactions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				B2A68A5F288C6F490057C88F /* BaseViewModel.swift in Sources */,
 				B25F9D31288BDA0D0051C126 /* TransparentAccountsViewerApp.swift in Sources */,
 				B25F9D42288BE2140051C126 /* Account.swift in Sources */,
+				B2CB83B0288DB11C00D058DB /* AccountTransactions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
