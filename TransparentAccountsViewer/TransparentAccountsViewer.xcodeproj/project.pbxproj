@@ -72,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				B2A68A5B288C6EAF0057C88F /* Scenes */,
+				B2A68A53288C36040057C88F /* ViewComponents */,
 				B25F9D3E288BE1C00051C126 /* Models */,
 				B2A68A66288CB8150057C88F /* Helpers */,
 				B2A68A56288C36DF0057C88F /* Resources */,
@@ -122,7 +123,6 @@
 				B2A68A5E288C6F490057C88F /* BaseViewModel.swift */,
 				B2A68A5C288C6EB60057C88F /* AccountList */,
 				B2A68A5D288C6ED20057C88F /* AccountDetail */,
-				B2A68A53288C36040057C88F /* ViewComponents */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
