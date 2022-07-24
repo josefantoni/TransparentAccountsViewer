@@ -27,14 +27,12 @@ struct AccountListView: View {
     }
     
     var tableView: some View {
-        List {
-            ForEach(viewModel.accounts, id: \.accountNumber) { account in
-                NavigationLink {
-                    AccountDetailView(for: account)
-                } label: {
-                    listRow(accountNumber: "\(account.accountNumber)/\(account.bankCode)",
-                            	owner: account.name)
-                }
+        List(viewModel.accounts, id: \.accountNumber) { account in
+            // Over here Navigation link creating instances of destination Views for no reason at all!
+            // So I am using a 'lazy' View and i am certain when i am creating it.
+            NavigationLink(destination: NavigationLazyView(AccountDetailView(for: account))) {
+                listRow(accountNumber: "\(account.accountNumber)/\(account.bankCode)",
+                        owner: account.name)
             }
         }
         .refreshable {

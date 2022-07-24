@@ -51,4 +51,31 @@ struct Account: Codable {
         description = try values.decodeIfPresent(String.self, forKey: .description) ?? ""
         statements = try values.decodeIfPresent([String].self, forKey: .statements) ?? []
     }
+    
+    init(accountNumber: String,
+         bankCode: String,
+         transparencyFrom: String,
+         transparencyTo: String,
+         publicationTo: String,
+         actualizationDate: String,
+         balance: Double,
+         currency: String,
+         name: String,
+         iban: String,
+         description: String,
+         statements: [String]) {
+        self.accountNumber = accountNumber
+        self.bankCode = bankCode
+        self.transparencyFrom = transparencyFrom
+        self.transparencyTo = transparencyTo
+        self.publicationTo = publicationTo
+        self.actualizationDate = actualizationDate
+        self.balance = balance
+        self.currency = currency
+        self.name = name
+        self.iban = iban
+        self.description = description
+        self.statements = statements
+    }
+
 }

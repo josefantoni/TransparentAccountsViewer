@@ -19,6 +19,8 @@
 		B2A68A5F288C6F490057C88F /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A68A5E288C6F490057C88F /* BaseViewModel.swift */; };
 		B2A68A61288C6FCC0057C88F /* AccountDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A68A60288C6FCC0057C88F /* AccountDetailViewModel.swift */; };
 		B2A68A63288C70160057C88F /* ServerUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A68A62288C70160057C88F /* ServerUrls.swift */; };
+		B2A68A68288CB82C0057C88F /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A68A67288CB82C0057C88F /* DateFormatter.swift */; };
+		B2CB83AE288DA7B500D058DB /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB83AD288DA7B500D058DB /* NavigationLazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		B2A68A5E288C6F490057C88F /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		B2A68A60288C6FCC0057C88F /* AccountDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailViewModel.swift; sourceTree = "<group>"; };
 		B2A68A62288C70160057C88F /* ServerUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerUrls.swift; sourceTree = "<group>"; };
+		B2A68A67288CB82C0057C88F /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		B2CB83AD288DA7B500D058DB /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NavigationLazyView.swift; path = TransparentAccountsViewer/ViewComponents/NavigationLazyView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 			children = (
 				B2A68A5B288C6EAF0057C88F /* Scenes */,
 				B25F9D3E288BE1C00051C126 /* Models */,
+				B2A68A66288CB8150057C88F /* Helpers */,
 				B2A68A56288C36DF0057C88F /* Resources */,
 				B25F9D36288BDA0E0051C126 /* Preview Content */,
 			);
@@ -95,6 +100,7 @@
 		B2A68A53288C36040057C88F /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				B2CB83AD288DA7B500D058DB /* NavigationLazyView.swift */,
 				B2A68A54288C36750057C88F /* ServerStatusView.swift */,
 			);
 			path = ViewComponents;
@@ -137,6 +143,14 @@
 				B2A68A60288C6FCC0057C88F /* AccountDetailViewModel.swift */,
 			);
 			path = AccountDetail;
+			sourceTree = "<group>";
+		};
+		B2A68A66288CB8150057C88F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B2A68A67288CB82C0057C88F /* DateFormatter.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,8 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2A68A68288CB82C0057C88F /* DateFormatter.swift in Sources */,
 				B2A68A61288C6FCC0057C88F /* AccountDetailViewModel.swift in Sources */,
 				B25F9D40288BE1FA0051C126 /* Accounts.swift in Sources */,
+				B2CB83AE288DA7B500D058DB /* NavigationLazyView.swift in Sources */,
 				B25F9D44288BE44F0051C126 /* AccountViewModel.swift in Sources */,
 				B2A68A58288C5F3F0057C88F /* AccountDetailView.swift in Sources */,
 				B2A68A63288C70160057C88F /* ServerUrls.swift in Sources */,
