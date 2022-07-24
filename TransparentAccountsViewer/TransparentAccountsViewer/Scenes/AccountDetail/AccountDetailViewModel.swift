@@ -9,10 +9,17 @@ import Foundation
 import Combine
 
 final class AccountDetailViewModel: BaseViewModel {
-    @Published var accountDetail: Account?
+    @Published var accountDetail: Account
     
-    func fetchTransparentAccountDetail(for account: Account) {
-        guard let url = URL(string: ServerUrls.transparentAccounts + account.accountNumber) else {
+    init(accountDetail: Account) {
+        self.accountDetail = accountDetail
+    }
+        
+    /*
+     *  Api must be broken. Always getting exactly same account result.
+     */
+    func fetchTransparentAccountDetail() {
+        guard let url = URL(string: ServerUrls.transparentAccounts + accountDetail.accountNumber) else {
             print("App error: invalid URL")
             return
         }
