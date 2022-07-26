@@ -29,7 +29,7 @@ struct Account: Codable {
         case publicationTo
         case actualizationDate
         case balance
-        case currency = "currency"
+        case currency
         case name
         case iban
         case description

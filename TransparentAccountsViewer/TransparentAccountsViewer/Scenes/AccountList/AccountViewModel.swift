@@ -23,25 +23,9 @@ final class AccountListViewModel: BaseViewModel {
     }
     
     private func fetchAllTransparentAccounts() {
-        guard var url = URLComponents(string: ServerUrls.transparentAccounts) else {
-            print("App error: invalid URL")
+        guard let request = createRequest(stringUrl: ServerUrls.transparentAccounts) else {
             return
-        }
-        // Fill parameters
-        url.queryItems = [
-            /*
-             * Right now server does not returning paging values, broken Api, future TODO?
-             */
-            URLQueryItem(name: "page", value: "0"),
-            URLQueryItem(name: "size", value: "10"),
-        ]
-        // Fill header
-        guard let urlWithParameters = url.url else {
-            print("App error: parameters in URL are invalid")
-            return
-        }
-        let request = createRequestWithHeader(for: urlWithParameters)
-        
+        }        
         URLSession.shared.dataTaskPublisher(for: request)
             .receive(on: DispatchQueue.main)
             .tryMap(handleReceivedOutput)
@@ -65,15 +49,12 @@ final class AccountListViewModel: BaseViewModel {
     }
     
     private func fetchConnectionServerStatus() {
-        guard let url = URL(string: ServerUrls.connectionServerStatus) else {
-            print("App error: invalid URL")
-            return
-        }
-        let request = createRequestWithHeader(for: url)
-        
         if let ping = pingToServer {
             bag.remove(ping)
             pingToServer = nil
+        }
+        guard let request = createRequest(stringUrl: ServerUrls.connectionServerStatus) else {
+            return
         }
         let newPingToServer = URLSession.shared.dataTaskPublisher(for: request)
             .receive(on: DispatchQueue.main)

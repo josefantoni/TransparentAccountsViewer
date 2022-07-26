@@ -20,12 +20,9 @@ final class AccountDetailViewModel: BaseViewModel {
      *  Api must be broken. Always getting exactly same account result.
      */
     func fetchTransparentAccountDetail() {
-        guard let url = URL(string: ServerUrls.transparentAccounts + accountDetail.accountNumber) else {
-            print("App error: invalid URL")
+        guard let request = createRequest(stringUrl: ServerUrls.transparentAccounts + accountDetail.accountNumber) else {
             return
         }
-        let request = createRequestWithHeader(for: url)
-        
         URLSession.shared.dataTaskPublisher(for: request)
             .receive(on: DispatchQueue.main)
             .tryMap(handleReceivedOutput)
@@ -44,25 +41,9 @@ final class AccountDetailViewModel: BaseViewModel {
     }
     
     func fetchTransactions() {
-        guard var url = URLComponents(string: String(format: ServerUrls.transparentTransactionsForAccount, accountDetail.accountNumber)) else {
-            print("App error: invalid URL")
-            return
-        }
-        // Fill parameters
-        url.queryItems = [
-            /*
-             * Right now server does not returning paging values, broken Api, future TODO?
-             */
-            URLQueryItem(name: "page", value: "0"),
-            URLQueryItem(name: "size", value: "10"),
-        ]
-        // Fill header
-        guard let urlWithParameters = url.url else {
-            print("App error: parameters in URL are invalid")
-            return
-        }
-        let request = createRequestWithHeader(for: urlWithParameters)
-        
+        guard let request = createRequest(stringUrl:
+                                            String(format: ServerUrls.transparentTransactionsForAccount, accountDetail.accountNumber)
+        ) else { return }
         URLSession.shared.dataTaskPublisher(for: request)
             .receive(on: DispatchQueue.main)
             .tryMap(handleReceivedOutput)
